@@ -9,8 +9,14 @@ def Ingresar():
     return lista
 
 def BuscarDato(dato):
-    if dato in lista:
-        print(f"El dato {dato} se encuentra en la lista")
+    contador = 0
+    encontrado = False
+    for numero in lista:
+        if dato == numero:
+            encontrado = True
+            contador += 1
+    if encontrado:
+        print(f"El dato {dato} se encuentra en la lista {contador} veces")
     else:
         print(f"El dato {dato} no se encuentra en la lista")
 
