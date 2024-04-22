@@ -3,7 +3,8 @@ lista = []
 def Ingresar():
     rango = int(input("Ingrese el número de datos que tendrá la lista: "))
     for i in range(rango):
-        nuevoNum = int(input(f"Digite el {i + 1}° número: "))
+        # nuevoNum = int(input(f"Digite el {i + 1}° número: "))
+        nuevoNum = int(random.randint(1, rango))
         lista.append(nuevoNum)
     return lista
 
@@ -13,6 +14,13 @@ def BuscarDato(dato):
     else:
         print(f"El dato {dato} no se encuentra en la lista")
 
+def ordenarLista():
+    lista.sort()
+    return lista
+
+def quitarDato(indice):
+    lista.pop(indice)
+    return lista
 
 print("Manejo de Listas")
 
@@ -42,6 +50,13 @@ while opcion != 0:
         case 3:
             dato = int(input("Ingrese el dato a buscar: "))
             BuscarDato(dato)
+            print("\n================================================")
+        case 4:
+            print(ordenarLista())
+            print("\n================================================")
+        case 5:
+            numeroQuitar = int(input("Digite la posicion del número para quitar de la lista: "))
+            print(quitarDato(numeroQuitar))
             print("\n================================================")
         case _:
             print("Opción no valida")
